@@ -1,4 +1,4 @@
-# [Template](https://github.com/1activegeek/nginx-config-collection/-template-/readme.md) <!-- This should be the app name -->
+# [Template](https://github.com/1activegeek/nginx-config-collection) <!-- This should be the app name -->
 
 ## Reverse Proxy Documentation
 
