@@ -4,9 +4,7 @@ The goal of this repo is to be a central location for a listing of known-good wo
 
 This repository will hopefully grow and flourish from the addition of content from others. Please share this, star it, and contribute! The more folks we have contributing to this, the better off this can become.
 
-<p align="center">
-[Contribute](/contributing.md)
-</p>
+# [Contribute](/contributing.md)
 
 # Configuration blocks
 *Categories will come later*
