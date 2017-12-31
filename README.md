@@ -9,5 +9,4 @@ This repository will hopefully grow and flourish from the addition of content fr
 # Configuration blocks
 *Categories will come later*
 
-Template Block  
-[Template](-template-/readme.md)
+## - [Ombi](/ombi/readme.md)
