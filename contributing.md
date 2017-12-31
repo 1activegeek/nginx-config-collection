@@ -11,11 +11,11 @@ In addition, each configuration must have the following:
   - **Name of Application** - name of the app with a `[Name of App](https://url.of.app)` format to allow easy clickthrough for discovery.
   - **App Documentation for Proxying** - if the app has any details about using a proxy, provide a link to this documentation (wikis, articles, references, etc)
     - *PLEASE NOTE: This should not be some random Reddit post or forum post, but actual solid documentation by the app provider.*
-  - **Application Notes** - anything of importance that should be noted (partially working, certain resources not loading, cautions about security, implications of use, etc)
+  - **Application Notes** - anything of importance that should be noted: partially working, certain resources not loading, cautions about security, implications of use, etc. Also ensure that there is information regarding the version of an app that this has worked with. Variations may happen between versions and can help illustrate reasons why a config may not work. 
   - **Authentication Support** - if this configuration supports authentication and whether there are any gotchas when trying to use authentication (i.e. App has authentication by default, must disable, double auth with app and nginx, etc)
-  - **Sub-domain Compatible** - whether the app supports being placed in sub-domain (yes / no / untested)
+  - **Sub-domain Compatible** - whether the app supports being placed in sub-domain (yes / no / untested) - mark if this is the format used for the example.
     - *NOTE: only use NO when you know for sure it will break or the app has acknowledged as such, not just because you couldn't get it to work*
-  - **Sub-directory Compatible** - whether the app supports being placed in sub-directory blocks (yes / no / untested)
+  - **Sub-directory Compatible** - whether the app supports being placed in sub-directory blocks (yes / no / untested)  - mark if this is the format used for the example.
      - *NOTE: only use NO when you know for sure it will break or the app has acknowledged as such, not just because you couldn't get it to work*
 - **proxy.conf / nginx.conf / other.conf** - If using references like `include`, be sure to link the appropriate files as well. Where possible, it would be best to remove all include lines and just add in your relevant content to the core `appname.conf` file. A user should be able to view your addition and see ALL information needed for this to work.
 
