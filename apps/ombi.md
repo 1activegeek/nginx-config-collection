@@ -19,7 +19,7 @@ sub-domain | Untested | N/A
 
 <summary> Expand </summary>
 
-## Sub-Direcotry Server Configuration Block
+## Sub-Directory Server Configuration Block
 
 ```
 ## Main server block redirect HTTP to HTTPS
