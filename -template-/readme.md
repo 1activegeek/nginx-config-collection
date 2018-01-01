@@ -14,12 +14,13 @@ authentication | Yes | N/A
 sub-directory | Yes | Due to rewrite requirement, it may be better suited for sub-domain usage. This is the format of the config file.
 sub-domain | Yes | N/A
 
-## Sub-Direcotry Server Configuration Block
+## Sub-Direcotry Configuration
 
 <details>
 
 <summary> Expand for Code </summary>
 
+### Template.conf
 ```
 ## Main server block to redirect traffic from HTTP to HTTPS
 server {
@@ -65,7 +66,7 @@ server {
   }
 ```
 
-### Proxy.conf for Sub-Directory Config
+### Proxy.conf
 
 ```
 client_max_body_size 10m;

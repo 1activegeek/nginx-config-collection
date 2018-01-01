@@ -16,11 +16,13 @@ sub-directory | Yes | This is the format used for the example. Using V3, so it d
 sub-domain | Untested | N/A
 
 
-## Sub-Directory Server Configuration Block
+## Sub-Directory Configuration
 
 <details>
 
 <summary> Expand for Code </summary>
+
+### Ombi.conf
 
 ```
 ## Main server block redirect HTTP to HTTPS
@@ -73,7 +75,7 @@ server {
 
 ```
 
-### Proxy.conf for Sub-Directory Config
+### Proxy.conf
 
 ```
 client_max_body_size 10m;
