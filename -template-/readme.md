@@ -16,7 +16,7 @@ sub-domain | Yes | N/A
 
 <details>
 
-<summary> Expand for config code</summary>
+<summary> Config Code</summary>
 
 ## Sub-Direcotry Server Configuration Block
 

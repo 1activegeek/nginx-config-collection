@@ -17,7 +17,7 @@ sub-domain | Untested | N/A
 
 <details>
 
-<summary> Expand </summary>
+## <summary> Config Code </summary>
 
 ## Sub-Directory Server Configuration Block
 
