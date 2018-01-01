@@ -1,3 +1,27 @@
+# [Ombi](https://www.ombi.io) <!-- This should be the app name -->
+
+## Reverse Proxy Documentation
+
+[Ombi Proxy Documentation](https://github.com/tidusjar/Ombi/wiki/Nginx-Reverse-Proxy-examples-(Linux))
+
+## Application notes
+
+There are 2 different versions of the app. Please be aware that there are some differences between the versions.
+
+
+Block Details | Supported | Notes
+------| ------ | ------
+authentication | Yes | N/A
+sub-directory | Yes | This is the format used for the example. Using V3, so it does include a rewrite as well.
+sub-domain | Untested | N/A
+
+<details>
+
+<summary> Expand </summary>
+
+## Sub-Direcotry Server Configuration Block
+
+```
 ## Main server block redirect HTTP to HTTPS
 server {
   listen 80;
@@ -45,3 +69,39 @@ server {
      if ($http_referer ~* /ombi/) {
             rewrite ^/dist/([0-9\d*]).js /ombi/dist/$1.js last;
     }
+
+```
+
+### Proxy.conf for Sub-Directory Config
+
+```
+client_max_body_size 10m;
+client_body_buffer_size 128k;
+
+#Timeout if the real server is dead
+proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+
+# Advanced Proxy Config
+send_timeout 5m;
+proxy_read_timeout 240;
+proxy_send_timeout 240;
+proxy_connect_timeout 240;
+
+# Basic Proxy Config
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+proxy_redirect  http://  $scheme://;
+proxy_http_version 1.1;
+proxy_no_cache $cookie_session;
+proxy_buffers 32 4k;
+
+## Ombi specific
+
+proxy_cache_bypass $http_upgrade;
+proxy_set_header Host $host;
+proxy_set_header Connection keep-alive;
+proxy_set_header Upgrade $http_upgrade;
+```
+
+</details>

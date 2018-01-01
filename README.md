@@ -9,4 +9,4 @@ This repository will hopefully grow and flourish from the addition of content fr
 # Configuration blocks
 *Categories will come later*
 
-## - [Ombi](/ombi/readme.md)
+## - [Ombi](/apps/ombi.md)
