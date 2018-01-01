@@ -15,11 +15,12 @@ authentication | Yes | N/A
 sub-directory | Yes | This is the format used for the example. Using V3, so it does include a rewrite as well.
 sub-domain | Untested | N/A
 
-<details>
-
-## <summary> Config Code </summary>
 
 ## Sub-Directory Server Configuration Block
+
+<details>
+
+<summary> Expand for Code </summary>
 
 ```
 ## Main server block redirect HTTP to HTTPS

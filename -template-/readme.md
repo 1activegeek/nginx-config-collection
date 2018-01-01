@@ -14,11 +14,11 @@ authentication | Yes | N/A
 sub-directory | Yes | Due to rewrite requirement, it may be better suited for sub-domain usage. This is the format of the config file.
 sub-domain | Yes | N/A
 
+## Sub-Direcotry Server Configuration Block
+
 <details>
 
-<summary> Config Code</summary>
-
-## Sub-Direcotry Server Configuration Block
+<summary> Expand for Code </summary>
 
 ```
 ## Main server block to redirect traffic from HTTP to HTTPS
