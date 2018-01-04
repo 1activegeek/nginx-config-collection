@@ -24,7 +24,7 @@ sub-domain | Untested | N/A
 
 ### Ombi.conf
 
-```
+```nginx
 ## Main server block redirect HTTP to HTTPS
 server {
   listen 80;
@@ -77,7 +77,7 @@ server {
 
 ### Proxy.conf
 
-```
+```nginx
 client_max_body_size 10m;
 client_body_buffer_size 128k;
 
