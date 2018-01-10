@@ -22,7 +22,7 @@ Each configuration MUST have the following:
   - **Sub-directory Compatible** - whether the app supports being placed in sub-directory blocks (yes / no / untested) - if untested, be sure to mark the code section of the doc with an N/A
     - *NOTE: only use NO when you know for sure it will break or the app has acknowledged as such, not just because you couldn't get it to work*
 
-The following sections should be contained within the `<details>` blocks below the sub-domain / sub-directory sections. This is intended to allow users an easy way to quickly view the code with proper syntax highlighting. If adding new sections, please be sure to use ``` ```nginx ``` at the top of the section for proper highlighting. In the future, the goal will be to mirror these files into the app folder. This will allow a user to also download the configs directly if needed for quick drag and drop into their nginx config folders.
+The following sections should be contained within the `<details>` blocks below the sub-domain / sub-directory sections. This is intended to allow users an easy way to quickly view the code with proper syntax highlighting. If adding new sections, please be sure to use ` ```nginx` at the top of the section for proper highlighting. In the future, the goal will be to mirror these files into the app folder. This will allow a user to also download the configs directly if needed for quick drag and drop into their nginx config folders.
 
 - **appname.conf** - This file will have the appropriate configuration details
   - All places where an FQDN should be placed, should be replaced with `<fqdn>`
