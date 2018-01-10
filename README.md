@@ -4,9 +4,11 @@ The goal of this repo is to be a central location for a listing of known-good wo
 
 This repository will hopefully grow and flourish from the addition of content from others. Please share this, star it, and contribute! The more folks we have contributing to this, the better off this can become.
 
-# [Contribute](/contributing.md)
+# [Contribute](/contributing.md) / [Template](/-template/appname.md)
 
 # Configuration blocks
 *Categories will come later*
 
-## - [Ombi](/ombi/readme.md)
+- [NZBGet](/apps/nzbget/nzbget.md)
+- [NZBHydra](/apps/nzbhydra/nzbhydra.md)
+- [Ombi](/apps/ombi/ombi.md)
