@@ -9,6 +9,6 @@ This repository will hopefully grow and flourish from the addition of content fr
 # Configuration blocks
 *Categories will come later*
 
-## - [NZBGet](/apps/nzbget/nzbget.md)
-## - [NZBHydra](/apps/nzbhydra/nzbhydra.md)
-## - [Ombi](/apps/ombi/ombi.md)
+- [NZBGet](/apps/nzbget/nzbget.md)
+- [NZBHydra](/apps/nzbhydra/nzbhydra.md)
+- [Ombi](/apps/ombi/ombi.md)
