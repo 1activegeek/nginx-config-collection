@@ -4,7 +4,7 @@
 3. All Pull Requests must have valuable titles and notes. Leaving defaults and not properly updating will be denied.
 4. Provide proof where available - if you have a working config for a publicly facing site - share that URL in the pull request to validate it's functioning.
 5. Please do not leave ANY FQDN/HOSTNAME/IP in your file. Follow the directions about replacing these entries.
-6. Entries for the main page with the list of configs should be in `[Name of App](/appname/readme.md)` format to link to your addition once the pull request is approved.
+6. Entries for the main page with the list of configs should be in `[Name of App](/appname/appname.md)` format to link to your addition once the pull request is approved.
 7. Where possible, add notes using `## Your note here` in the configuration files explaining what things are doing. This will help educate everyone in why certain lines may be needed, what they're doing, or how something works.
 
 ## Format
