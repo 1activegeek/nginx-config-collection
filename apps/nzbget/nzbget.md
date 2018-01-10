@@ -18,13 +18,7 @@ base URL | Yes |
 iFrame | Yes |
 
 <!-- This will be used to sample out the Location block for sub-directory config -->
-## Location Block
-
-<details>
-
-<summary> Expand for Code </summary>
-
-### Location
+## Location Directive
 ```nginx
 location /<baseurl>/ {
   proxy_pass http://<hostname>:6789/; ## Default <port> is 6789, adjust if necessary
@@ -37,9 +31,6 @@ location /<baseurl>/ {
   proxy_no_cache $cookie_session;
 }
 ```
-
-</details>
-
 <!-- This is to be used to show code for a sub-directory config -->
 ## Sub-Directory Configuration
 

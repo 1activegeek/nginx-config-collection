@@ -19,7 +19,7 @@ base URL | Yes/No/Untested |
 iFrame | Yes/No/Untested |
 
 <!-- This will be used to sample out the Location block for sub-directory config -->
-### Location Directive
+## Location Directive
 ```nginx
 location /<baseurl>/ {
   proxy_pass  http://<hostname>:<port>/;

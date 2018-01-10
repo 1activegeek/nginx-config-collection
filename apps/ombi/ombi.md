@@ -19,7 +19,7 @@ base URL | Yes | Be sure to set the Base URL in Ombi
 iFrame | Yes | No need for extra headers or plugins to allow iFrame
 
 <!-- This will be used to sample out the Location block for sub-directory config -->
-### Location Directive
+## Location Directive
 ```nginx
 location /<baseurl>/ {
   proxy_pass  http://<hostname>:5000/; ## Default <port> is 5000, adjust if necessary

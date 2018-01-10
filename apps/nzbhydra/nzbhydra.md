@@ -19,7 +19,7 @@ base URL | Yes |
 iFrame | Yes |
 
 <!-- This will be used to sample out the Location block for sub-directory config -->
-### Location Directive
+## Location Directive
 ```nginx
 location /<baseurl>/ {
   proxy_pass http://<hostname>:5075/; ## Default <port> is 5075, adjust if necessary
