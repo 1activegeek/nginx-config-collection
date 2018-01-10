@@ -11,7 +11,7 @@
 Each configuration will be placed into a folder under the apps directory of this repo, with the folder name matching the application. This will help to make it easier for everyone to find the specific configuration they are looking for. The short term goal is to add markdown based docs with the details for quick copy/paste and visual browsing. The long term plan is to adjust this repo to also include downloadable config files ready to drop into your configuration.
 
 Each configuration MUST have the following:
-- **appname.md** - This will be your landing page details for the base proxy details. You can view the [template](/-template-/appname.md) and see all the below details and the formatting required. Please do not deviate from the format.
+- **appname.md** - This will be your landing page details for the base proxy details. You can view the [template](/-template/appname.md) and see all the below details and the formatting required. Please do not deviate from the format.
   - **Name of Application** - name of the app with a `[Name of App](https://url.of.app)` format to allow easy clickthrough for discovery.
   - **Official Proxy Documentation** - if the app has any details about using a proxy, provide a link to this documentation (wikis, articles, references, etc) in the first line of application notes below.
     - *PLEASE NOTE: This should not be some random Reddit post or forum post, but actual solid documentation by the app provider.*
@@ -22,7 +22,7 @@ Each configuration MUST have the following:
   - **Sub-directory Compatible** - whether the app supports being placed in sub-directory blocks (yes / no / untested) - if untested, be sure to mark the code section of the doc with an N/A
     - *NOTE: only use NO when you know for sure it will break or the app has acknowledged as such, not just because you couldn't get it to work*
 
-The most frequent use of nginx is to add multiple sites to a single host. This allows easy access to multiple services/systems on a single host. For this reason, the Location Directive will be outlined at the top of each configuration set. This is because most users will be looking for this information. To keep this uniform, please be sure of the following:
+- **Location Directive** - The most frequent use of nginx is to add multiple sites to a single host. This allows easy access to multiple services/systems on a single host. For this reason, the Location Directive will be outlined at the top of each configuration set. This is because most users will be looking for this information. To keep this uniform, please be sure of the following:
 - Do not use INCLUDE files - if there are, be sure to include all relevant details from them (i.e. proxy.conf)
 - All information that would be substituted (as seen below in appname.conf explanation - Rule 5 above) is substituted
 - If NOT providing detail for a sub-directory entry, simply input `NO LOCATION DIRECTIVE` into the code section

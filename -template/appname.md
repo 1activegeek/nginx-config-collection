@@ -1,10 +1,10 @@
 <!-- This should be the app name and the URL to the app site -->
 <!-- If major revisions exist of an app that change the RP support follow the app name with V# -->
-# [App Name](https://github.com/1activegeek/nginx-config-collection/blob/master/-template-/appname.md)
+# [App Name](https://github.com/1activegeek/nginx-config-collection/blob/master/-template/appname.md)
 
 ## Application notes
 <!-- This should point to any provided documentation by the app developer, if none, remove line below -->
-[Official Proxy Documentation](https://github.com/1activegeek/nginx-config-collection/blob/master/-template-/appname.md)
+[Official Proxy Documentation](https://github.com/1activegeek/nginx-config-collection/blob/master/-template/appname.md)
 
 <!-- This should be used to highlight/outline any special notes, or important points about the configs -->
 There are 2 different versions of the app. Please be aware that there are some differences between the versions.
