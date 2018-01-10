@@ -2,24 +2,36 @@
 <!-- If major revisions exist of an app that change the RP support follow the app name with V# -->
 # [App Name](https://github.com/1activegeek/nginx-config-collection/blob/master/-template-/appname.md)
 
-## Reverse Proxy Documentation
-<!-- This should point to any provided documentation by the app developer -->
-<!-- Additionally if available, any important notes about RP from app developer -->
-[App Documentation](https://github.com/1activegeek/nginx-config-collection/blob/master/-template-/appname.md))
-
 ## Application notes
+<!-- This should point to any provided documentation by the app developer, if none, remove line below -->
+[Official Proxy Documentation](https://github.com/1activegeek/nginx-config-collection/blob/master/-template-/appname.md)
+
 <!-- This should be used to highlight/outline any special notes, or important points about the configs -->
 There are 2 different versions of the app. Please be aware that there are some differences between the versions.
 
 <!-- This will be used to outline all the pertinent block details -->
 Block Details | Supported | Notes
 ------ | ------ | ------
-authentication | Yes/No/Untested | N/A
-sub-directory | Yes/No/Untested | This is the format used for the example. Using V3, so it does include a rewrite as well.
-sub-domain | Yes/No/Untested | N/A
-base URL | Yes/No/Untested | N/A
-iFrame | Yes/No/Untested | N/A
+authentication | Yes/No/Untested |  
+sub-directory | Yes/No/Untested | Be sure to set baseurl in app
+sub-domain | Yes/No/Untested |
+base URL | Yes/No/Untested |
+iFrame | Yes/No/Untested |
 
+<!-- This will be used to sample out the Location block for sub-directory config -->
+### Location Directive
+```nginx
+location /<baseurl>/ {
+  proxy_pass  http://<hostname>:<port>/;
+
+  # Basic Proxy Config
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+  proxy_http_version 1.1;
+  proxy_no_cache $cookie_session;
+}
+```
 <!-- This is to be used to show code for a sub-directory config -->
 ## Sub-Directory Configuration
 
