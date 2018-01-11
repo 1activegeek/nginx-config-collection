@@ -1,11 +1,15 @@
 # NGINX Server Block Configuration Collection
 
 <p align="center">
+
 ## [Instructions](instructions.md) | [Contribute](/contributing.md) | [Template](/-template/appname.md)
+
 </p>
 
 <p align="center">
+
 ======== **PLEASE READ THE INSTRUCTIONS CAREFULLY** ========
+
 </p>
 
 
