@@ -1,0 +1,8 @@
+# Usage Instructions
+
+Please be aware that these configurations are going to be supplied by many different users potentially, among different file structures, versions, and even platforms. For this reason it is important to realize that you may not be able to simply drag/drop these configs into your files and have it work. For this reason you need to be aware of this and try to analyze each config for potential differences. The below list will highlight some of these and remind you to validate them before using a configuration.
+
+- **include** - these are lines that are often used to shorten the config file with commonly used parameters. If there are lines that start with `include` in the configurations, be sure to adjust these accordingly. If you are on a different platform or version than the author, you may very well need to adjust this.
+- **root** - this setting is used to indicate the root directory for files/content to be served. Be aware that others may be doing different thigns on there servers, have relocated error pages, or other various content. For this reason, be sure to validate your root seems to be ok.
+- **default_server** - if this option is used at the top of a server block, beware. You may have this used in another file already and may not be able to use it in more than one place. Check to ensure this is not used in more than one configuration or more than one place in a configuration.
+- **listen** - if you see lines using the listen directive, you may need to adjust this for your own setup. Some users may simply listen on 80, others 443, other both. There are many cases as well where someone may be listening on non-standard ports or perhaps you need to listen on non-standard ports. Be sure to match this with your setup.
