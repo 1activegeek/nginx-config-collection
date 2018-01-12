@@ -9,6 +9,15 @@ This repository will hopefully grow and flourish from the addition of content fr
 # Configuration blocks
 *Categories will come later*
 
+- [Guacamole (Apache Guacamole)](/apps/guacamole/guacamole.md)
 - [NZBGet](/apps/nzbget/nzbget.md)
 - [NZBHydra](/apps/nzbhydra/nzbhydra.md)
 - [Ombi](/apps/ombi/ombi.md)
+- [Organizr](/apps/organizr/organizr.md)
+- [Plex](/apps/plex/plex.md)
+- [PlexPy (Now Tautulli)](/apps/tautulli/tautulli.md)
+- [Portainer](/apps/portainer/portainer.md)
+- [Radarr](/apps/radarr/radarr.md)
+- [Sonarr](/apps/sonarr/sonarr.md)
+- [Tautulli (Formerly PlexPy)](/apps/tautulli/tautulli.md)
+- [Unifi Controller](/apps/unifi_controller/unifi_controller.md)

@@ -1,35 +1,28 @@
 <!-- This should be the app name and the URL to the app site -->
 <!-- If major revisions exist of an app that change the RP support follow the app name with V# -->
-# [Ombi](https://www.ombi.io)
+# [Organizr](https://organizr.us)
 
 ## Application notes
 <!-- This should point to any provided documentation by the app developer, if none, remove line below -->
-[Official Proxy Documentation](https://github.com/tidusjar/Ombi/wiki/Nginx-and-Apache-Reverse-Proxy-examples-(Linux))
+[Official Proxy Documentation](https://github.com/causefx/Organizr/wiki/Authentication-%7C-Server-Based#nginx)
 
 <!-- This should be used to highlight/outline any special notes, or important points about the configs -->
-There are 2 different versions of the app. Please be aware that there are some differences between the versions in the configs. Specifically "The url rewrite is required after version 3.0.2517."
-
-*NOTE: Some users have noticed issues with the rewrite being placed AFTER the location block and have been successful when placing it before the location block. If you experience issues with the rewrite below the location, try switching it.*
+The app supports being used with other authentication mechansisms. This will be configured in the app. It is highly suggested to use this as the authentication mechanism for your other tabs in this app which you may likely be reverse proxying. This can be done using an auth snippet of code.
 
 <!-- This will be used to outline all the pertinent block details -->
 Block Details | Supported | Notes
 ------ | ------ | ------
-authentication | Yes | It is suggested to use the built-in Plex based authentication.
-sub-directory | Yes | Using V3, so it does include a rewrite as well.
-sub-domain | Yes | Rewrite may not be required. Need validation here.
-base URL | Yes | Be sure to set the Base URL in Ombi
-iFrame | Yes | No need for extra headers or plugins to allow iFrame
+authentication | Yes | It is suggested to use authentication through Organizr.
+sub-directory | Yes |
+sub-domain | Yes |
+base URL | Yes |
+iFrame | Untested |
 
 <!-- This will be used to sample out the Location block for sub-directory config -->
 ## Location Directive
 ```nginx
 location /<baseurl>/ {
-  proxy_pass  http://<hostname>:5000/; ## Default <port> is 5000, adjust if necessary
-  proxy_cache_bypass $http_upgrade;
-  proxy_set_header Connection keep-alive;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header X-Forwarded-Host $server_name;
-  proxy_set_header X-Forwarded-Ssl on;
+  proxy_pass  http://<hostname>/; ## Default <port> is 80, so no need to adjust
 
   # Basic Proxy Config
   proxy_set_header X-Real-IP $remote_addr;
@@ -38,11 +31,6 @@ location /<baseurl>/ {
   proxy_http_version 1.1;
   proxy_no_cache $cookie_session;
 }
-
-## Required for Ombi 3.0.2517+
-    if ($http_referer ~* /<baseurl>/) {
-              rewrite ^/dist/([0-9\d*]).js /<baseurl>/dist/$1.js last;
-      }
 ```
 <!-- This is to be used to show code for a sub-directory config -->
 ## Sub-Directory Configuration
@@ -51,7 +39,7 @@ location /<baseurl>/ {
 
 <summary> Expand for Code </summary>
 
-### ombi.conf
+### organizr.conf
 ```nginx
 ## Main server block to redirect traffic from HTTP to HTTPS
 server {
@@ -70,18 +58,9 @@ server {
   include /config/nginx/ssl.conf ## Using a single include for all SSL related items
 
   location /<baseurl>/ {
-    proxy_pass  http://<hostname>:5000/; ## Default <port> is 5000, adjust if necessary
-    include /config/nginx/proxy.conf; ## Using a single include file for commonly used settings
-    proxy_cache_bypass $http_upgrade;
-    proxy_set_header Connection keep-alive;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header X-Forwarded-Host $server_name;
-    proxy_set_header X-Forwarded-Ssl on;
+    proxy_pass  http://<hostname>/; ## Default <port> is 80, so no need to adjust
+    include /config/nginx/proxy.conf
   }
-## Required for Ombi 3.0.2517+
-    if ($http_referer ~* /<baseurl>/) {
-              rewrite ^/dist/([0-9\d*]).js /<baseurl>/dist/$1.js last;
-      }
 ```
 ### proxy.conf
 ```nginx
@@ -143,7 +122,7 @@ more_clear_headers 'X-Powered-By';
 
 <summary> Expand for Code </summary>
 
-### ombi.conf
+### organizr.conf
 ```nginx
 ## Main server block to redirect traffic from HTTP to HTTPS
 server {
@@ -162,18 +141,15 @@ server {
   include /config/nginx/ssl.conf ## Using a single include for all SSL related items
 
   location / {
-    proxy_pass  http://<hostname>:5000/; ## Default <port> is 5000, adjust if necessary
-    include /config/nginx/proxy.conf; ## Using a single include file for commonly used settings
-    proxy_cache_bypass $http_upgrade;
-    proxy_set_header Connection keep-alive;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header X-Forwarded-Host $server_name;
-    proxy_set_header X-Forwarded-Ssl on;
+    proxy_pass  http://<hostname>/; ## Default <port> is 80, so no need to adjust
+
+    # Basic Proxy Config
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_http_version 1.1;
+    proxy_no_cache $cookie_session;
   }
-## Required for Ombi 3.0.2517+
-    if ($http_referer ~* /) {
-              rewrite ^/dist/([0-9\d*]).js /dist/$1.js last;
-      }
 ```
 ### proxy.conf
 ```nginx
