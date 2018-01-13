@@ -18,6 +18,11 @@ sub-domain | Yes |
 base URL | Yes |
 iFrame | Untested |
 
+## Addons
+- [Auth](/apps/organizr/auth/auth_request.md)
+
+
+
 <!-- This will be used to sample out the Location block for sub-directory config -->
 ## Location Directive
 ```nginx
