@@ -6,6 +6,8 @@
 <!-- This should point to any provided documentation by the app developer, if none, remove line below -->
 <!-- This should be used to highlight/outline any special notes, or important points about the configs -->
 It seems this requires use of a sub-directory. It actually has problems if placed on the root of a sub-domain. While it may work, it is not suggested to proxy ALL Plex traffic through this proxy. This would put a large load on the system unnecessarily.
+
+**EDIT: 2018-03-16 - The old mechanism seems to not be working as properly as it did previously, at least in my setup. I've switched to this which is working. It had something to do with the way the Plex system looks for deviceID or auth Tokens when it's not seen the device previously.**
 <!-- This will be used to outline all the pertinent block details -->
 Block Details | Supported | Notes
 ------ | ------ | ------
@@ -18,8 +20,13 @@ iFrame | Yes |
 <!-- This will be used to sample out the Location block for sub-directory config -->
 ## Location Directive
 ```nginx
-location /plex/ {
+location /plex {
+  return 301 /web;
+}
+location ~ ^/(\?(?:.*)(X-Plex-Device=)|web|video|photo|library|web|status|system|updater|clients|:|playQueues)(.*) {
   proxy_pass http://<hostname>:32400/; ## Default <port> is 32400, adjust if necessary
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection "upgrade";
 
   # Basic Proxy Config
   proxy_set_header X-Real-IP $remote_addr;
@@ -27,9 +34,6 @@ location /plex/ {
   proxy_set_header X-Forwarded-Proto $scheme;
   proxy_http_version 1.1;
   proxy_no_cache $cookie_session;
-}
-if ($http_referer ~* /plex/) {
-  rewrite ^/web/(.*) /plex/web/$1? redirect;
 }
 ```
 <!-- This is to be used to show code for a sub-directory config -->
@@ -57,12 +61,14 @@ server {
   index index.html index.htm index.php;
   include /config/nginx/ssl.conf ## Using a single include for all SSL related items
 
-  location /plex/ {
+  location /plex {
+    return 301 /web;
+  }
+  location ~ ^/(\?(?:.*)(X-Plex-Device=)|web|video|photo|library|web|status|system|updater|clients|:|playQueues)(.*) {
     proxy_pass http://<hostname>:32400/; ## Default <port> is 32400, adjust if necessary
     include /config/nginx/proxy.conf; ## Using a single include file for commonly used settings
-  }
-  if ($http_referer ~* /plex/) {
-    rewrite ^/web/(.*) /plex/web/$1? redirect;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
   }
 ```
 ### proxy.conf
