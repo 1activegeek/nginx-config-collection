@@ -7,7 +7,7 @@
 <!-- This should be used to highlight/outline any special notes, or important points about the configs -->
 It seems this requires use of a sub-directory. It actually has problems if placed on the root of a sub-domain. While it may work, it is not suggested to proxy ALL Plex traffic through this proxy. This would put a large load on the system unnecessarily.
 
-If you desire to utilize the SSO feature with an app called Organizr, you will have to use this on a sub-directory. Sub domains should likely be supproted if desired, however it will not work with the SSO mechanism properly. 
+If you desire to utilize the SSO feature with an app called Organizr, you will have to use this on a sub-directory. Sub domains should likely be supproted if desired, however it will not work with the SSO mechanism properly.
 
 **EDIT: 2018-03-16 - The old mechanism seems to not be working as properly as it did previously, at least in my setup. I've switched to this which is working. It had something to do with the way the Plex system looks for deviceID or auth Tokens when it's not seen the device previously.**
 <!-- This will be used to outline all the pertinent block details -->
@@ -15,7 +15,7 @@ Block Details | Supported | Notes
 ------ | ------ | ------
 authentication | Untested | Has Plex auth built in, it actually may not function with another auth in front
 sub-directory | Yes |
-sub-domain | No |
+sub-domain | N/A |
 base URL | Yes | You must use /plex, it can not be altered
 iFrame | Yes |
 
@@ -133,7 +133,7 @@ more_clear_headers 'X-Powered-By';
 
 <summary> Expand for Code </summary>
 
-```nginx
+```
 N/A
 ```
 
