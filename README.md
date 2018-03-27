@@ -17,7 +17,6 @@ This repository will hopefully grow and flourish from the addition of content fr
 - [Ombi](/apps/ombi/ombi.md)
 - [Organizr](/apps/organizr/organizr.md)
 - [Plex](/apps/plex/plex.md)
-- [PlexPy (Now Tautulli)](/apps/tautulli/tautulli.md)
 - [Portainer](/apps/portainer/portainer.md)
 - [Radarr](/apps/radarr/radarr.md)
 - [Sonarr](/apps/sonarr/sonarr.md)
